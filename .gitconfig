@@ -1,0 +1,14 @@
+[user]
+	name = Alex Markin
+	email = alexndr86@gmail.com
+[ui "color"]
+	ui = always
+[color]
+	ui = true
+[core]
+	excludesfile = ~/.gitignore_global
+	editor = vim
+[alias]
+	graph = log --all --graph --decorate --oneline
+[github]
+	user = alex-mark
