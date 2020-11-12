@@ -14,7 +14,7 @@ normal_border_color="010101"
 focused_border_color="21bf73"
 
 # global settings
-yabai -m config mouse_follows_focus          on
+yabai -m config mouse_follows_focus          off
 yabai -m config focus_follows_mouse          off
 yabai -m config window_placement             second_child
 yabai -m config window_topmost               on
@@ -54,7 +54,8 @@ yabai -m rule --add title=' Preferences$' manage=off
 # yabai -m config --space 7 layout             float
 
 # window rules
-# yabai -m rule --add app="^Mail$" space=2
+yabai -m rule --add app="^Telegram$" space=1
+yabai -m rule --add app="^Franz$" space=1
 # yabai -m rule --add app="^Safari$" space=3
 # yabai -m rule --add app="^Notes$" space=4
 # yabai -m rule --add app="^Transmission$" space=5
