@@ -5,7 +5,7 @@
 # ====== Variables =============================
 
 gaps_top="4"
-gaps_bottom="24"
+gaps_bottom="4"
 gaps_left="4"
 gaps_right="4"
 gaps_inner="4"
@@ -63,6 +63,7 @@ yabai -m rule --add app="^Franz$" space=1
 # yabai -m rule --add app="^Discord$" space=7 grid=1:1:0:0:1:1 manage=off
 # yabai -m rule --add app="^Steam$" space=7 manage=off
 # yabai -m rule --add app="^System Preferences$" manage=off
+yabai -m rule --add label="Firfox PIP" app="^Firefox$" title="^(Picture-in-Picture)$" manage=off
 
 # signals
 # yabai -m signal --add event=window_destroyed action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"

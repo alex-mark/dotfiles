@@ -8,7 +8,7 @@ export ZSH="/Users/alex/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-# ZSH_THEME="avit"
+ZSH_THEME="avit"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -62,44 +62,28 @@ export ZSH="/Users/alex/.oh-my-zsh"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-# plugins=(
-#   git
-#   z
-#   dotenv
-#   zsh-autosuggestions
-#   docker
-#   docker-compose
-#   zsh-syntax-highlighting
-#   python
-#   vi-mode
-# )
+plugins=(
+  git
+  z
+  osx
+  dotenv
+  zsh-autosuggestions
+  docker
+  docker-compose
+  zsh-syntax-highlighting
+  python
+  postgres
+  vi-mode
+)
 
-# source $ZSH/oh-my-zsh.sh
+source $ZSH/oh-my-zsh.sh
 
-# Load antigen
-source /usr/local/share/antigen/antigen.zsh
+# Fix to make antigen work
+# source /usr/local/share/antigen/antigen.zsh
 
-# Load oh-my-zsh library.
-antigen use oh-my-zsh
+# User configuration
 
-# Load bundles from the default repo (oh-my-zsh).
-antigen bundle z
-antigen bundle git
-antigen bundle command-not-found
-antigen bundle docker
-antigen bundle vi-mode
-
-# Load bundles from external repos.
-antigen bundle zsh-users/zsh-completions
-antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle djui/alias-tips
-
-antigen theme avit
-
-# Commit Antigen Configuration
-antigen apply
-
+# export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
