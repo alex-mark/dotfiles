@@ -1,8 +1,12 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+#default editors
+export EDITOR='vim'
+export VEDITOR='code'
+
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/alex/.oh-my-zsh"
+# export ZSH="/Users/alex/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -76,29 +80,85 @@ export ZSH="/Users/alex/.oh-my-zsh"
 
 # source $ZSH/oh-my-zsh.sh
 
-# Load antigen
-source /usr/local/share/antigen/antigen.zsh
+# Load zplug
+# source ~/.zplug/init.zsh
+
+# zplug 'avit/zsh', as:theme
+
+# # Load oh-my-zsh plugins
+# zplug "plugins/z", from:oh-my-zsh
+# zplug "plugins/git", from:oh-my-zsh
+# zplug "plugins/command-not-found", from:oh-my-zsh
+# zplug "plugins/docker", from:oh-my-zsh
+# zplug "plugins/vi-mode", from:oh-my-zsh
+
+# # Load plugins from external repos.
+# antigen bundle zsh-users/zsh-completions
+# antigen bundle zsh-users/zsh-autosuggestions
+# antigen bundle zsh-users/zsh-syntax-highlighting
+# antigen bundle djui/alias-tips
+
+# # Install plugins if there are plugins that have not been installed
+# if ! zplug check --verbose; then
+#     printf "Install? [y/N]: "
+#     if read -q; then
+#         echo; zplug install
+#     fi
+# fi
+
+# # Then, source plugins and add commands to $PATH
+# zplug load --verbose
+
+source <(antibody init)
+
+ZSH_THEME="avit"
 
 # Load oh-my-zsh library.
-antigen use oh-my-zsh
+antibody bundle ohmyzsh/ohmyzsh
+
+ZSH=$(antibody path ohmyzsh/ohmyzsh)
+
+
 
 # Load bundles from the default repo (oh-my-zsh).
-antigen bundle z
-antigen bundle git
-antigen bundle command-not-found
-antigen bundle docker
-antigen bundle vi-mode
+antibody bundle ohmyzsh/git
+antibody bundle ohmyzsh/command-not-found
+antibody bundle ohmyzsh/docker
+antibody bundle ohmyzsh/vi-mode
 
 # Load bundles from external repos.
-antigen bundle zsh-users/zsh-completions
-antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle djui/alias-tips
+antibody bundle rupa/z
+antibody bundle zsh-users/zsh-history-substring-search
+antibody bundle zsh-users/zsh-completions
+antibody bundle zsh-users/zsh-autosuggestions
+antibody bundle zdharma/fast-syntax-highlighting
+antibody bundle djui/alias-tips
 
-antigen theme avit
+# antigen theme avit
 
-# Commit Antigen Configuration
-antigen apply
+# # Load antigen
+# source /usr/local/share/antigen/antigen.zsh
+
+# # Load oh-my-zsh library.
+# antigen use oh-my-zsh
+
+# # Load bundles from the default repo (oh-my-zsh).
+# antigen bundle z
+# antigen bundle git
+# antigen bundle command-not-found
+# antigen bundle docker
+# antigen bundle vi-mode
+
+# # Load bundles from external repos.
+# antigen bundle zsh-users/zsh-completions
+# antigen bundle zsh-users/zsh-autosuggestions
+# antigen bundle zsh-users/zsh-syntax-highlighting
+# antigen bundle djui/alias-tips
+
+# antigen theme avit
+
+# # Commit Antigen Configuration
+# antigen apply
 
 
 # You may need to manually set your language environment
@@ -110,8 +170,6 @@ antigen apply
 # else
 #   export EDITOR='mvim'
 # fi
-export EDITOR='vim'
-export VISUAL='vim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
