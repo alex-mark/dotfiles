@@ -11,3 +11,8 @@ Bash cheatsheet https://devhints.io/bash
 
 ## tmux
 Tmux shortcuts https://tmuxcheatsheet.com/
+
+## brew
+```bash
+brew bundle dump --describe
+```
