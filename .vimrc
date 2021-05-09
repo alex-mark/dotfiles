@@ -34,6 +34,21 @@ set noerrorbells visualbell t_vb=    "Disable annoying error noises
 set splitbelow          " Open new vertical split bottom
 set splitright          " Open new horizontal splits right
 
+"Mode Settings
+
+let &t_SI.="\e[5 q" "SI = INSERT mode
+let &t_SR.="\e[4 q" "SR = REPLACE mode
+let &t_EI.="\e[1 q" "EI = NORMAL mode (ELSE)
+
+"Cursor settings:
+
+"  1 -> blinking block
+"  2 -> solid block
+"  3 -> blinking underscore
+"  4 -> solid underscore
+"  5 -> blinking vertical bar
+"  6 -> solid vertical bar
+
 " Buffers
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set hidden              " Allows having hidden buffers (not displayed in any window)
@@ -93,29 +108,4 @@ nnoremap <leader>s :mksession<CR>
 " Split with leader
 nnoremap <Leader>- :sp<CR>
 nnoremap <Leader>\| :vsp<CR>
-
-
-" Lose Bad Habits
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Try to prevent bad habits like using the arrow keys for movement. This is
-" not the only possible bad habit. For example, holding down the h/j/k/l keys
-" for movement, rather than using more efficient movement commands, is also a
-" bad habit. The former is enforceable through a .vimrc, while we don't know
-" how to prevent the latter.
-" Do this in normal mode...
-nnoremap <Left>  :echoe "Use h"<CR>
-nnoremap <Right> :echoe "Use l"<CR>
-nnoremap <Up>    :echoe "Use k"<CR>
-nnoremap <Down>  :echoe "Use j"<CR>
-" ...and in insert mode
-inoremap <Left>  <ESC>:echoe "Use h"<CR>
-inoremap <Right> <ESC>:echoe "Use l"<CR>
-inoremap <Up>    <ESC>:echoe "Use k"<CR>
-inoremap <Down>  <ESC>:echoe "Use j"<CR>
-
-" Remove newbie crutches in Visual Mode
-vnoremap <Down> <Nop>
-vnoremap <Left> <Nop>
-vnoremap <Right> <Nop>
-vnoremap <Up> <Nop>
 
